@@ -8,7 +8,7 @@ let currentOrder = null;
 
 // === ЗАГРУЗКА ЗАКАЗОВ ===
 async function loadOrders() {
-    const apiKey = '123e4567-e89b-12d3-a456-426655440000'; // ЗАМЕНИТЕ НА ВАШ КЛЮЧ!
+    const apiKey = '4e2faac2-923e-48f6-a0ef-b207af91d7e6'; // ЗАМЕНИТЕ НА ВАШ КЛЮЧ!
     const url = `https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${apiKey}`;
 
     try {
