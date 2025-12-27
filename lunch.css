@@ -505,3 +505,42 @@
     cursor: not-allowed;
     transform: none;
 }
+/* Стили для таблицы заказов */
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+}
+
+#orders-table th,
+#orders-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#orders-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+#orders-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px 8px;
+    margin: 0 2px;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
