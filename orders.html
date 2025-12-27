@@ -59,40 +59,48 @@
     </div>
 
     <!-- Редактирование заказа -->
+ 
     <div id="edit-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Редактирование заказа</h3>
+            <!-- Состав заказа (будет заполнен JS) -->
+            <div id="edit-order-summary">
+                <!-- Здесь появится состав и цена -->
+            </div>
             <form id="edit-form">
                 <input type="hidden" id="edit-order-id">
                 <label>Дата оформления</label>
                 <input type="text" id="edit-created-at" readonly>
-
-                <label>Имя получателя</label>
+            
+                <label>Имя получателя *</label>
                 <input type="text" id="edit-full_name" required>
-
-                <label>Адрес доставки</label>
+            
+                <label>Адрес доставки *</label>
                 <input type="text" id="edit-delivery_address" required>
-
+            
+                <label>Телефон *</label>
+                <input type="tel" id="edit-phone" required>
+            
+                <label>Email</label>
+                <input type="email" id="edit-email">
+            
                 <label>Время доставки</label>
                 <select id="edit-delivery_type" required>
-                    <option value="now">Как можно скорее</option>
+                    <option value="now">Как можно скорее (с 07:00 до 23:00)</option>
                     <option value="by_time">К указанному времени</option>
                 </select>
-                <input type="time" id="edit-delivery_time" step="300">
-
-                <label>Телефон</label>
-                <input type="tel" id="edit-phone" required>
-
-                <label>Email</label>
-                <input type="email" id="edit-email" required>
-
+                <label for="edit-delivery_time">Конкретное время доставки</label>
+                <input type="time" id="edit-delivery_time" 
+                       min="07:00" max="23:00" step="300"
+                       value="07:00">
+            
                 <label>Комментарий</label>
-                <textarea id="edit-comment"></textarea>
-
+                <textarea id="edit-comment" placeholder="Например: без лука, острее"></textarea>
+            
                 <div class="modal-actions">
                     <button type="button" class="modal-btn" id="edit-cancel">Отмена</button>
-                    <button type="submit" class="modal-btn green" id="edit-save">Сохранить</button>
+                    <button type="submit" class="modal-btn green">Сохранить</button>
                 </div>
             </form>
         </div>
@@ -110,6 +118,11 @@
             </div>
         </div>
     </div>
+
+    <script src="displayDishes.js"></script>
+    <script src="orders.js"></script>
+</body>
+</html>
 
     <script src="displayDishes.js"></script>
     <script src="orders.js"></script>
