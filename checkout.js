@@ -161,7 +161,7 @@ async function handleFormSubmit(e) {
 
     // 🔑 ВАШ API KEY — ЗАМЕНИТЕ НА СВОЙ!
     const API_KEY = '123e4567-e89b-12d3-a456-426655440000';
-    const url = `http://lab8-api.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${API_KEY}`;
+    const url = `https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${API_KEY}`;
 
     try {
         const response = await fetch(url, {
