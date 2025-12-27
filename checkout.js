@@ -159,8 +159,8 @@ async function handleFormSubmit(e) {
         dessert_id: dishMap.dessert || null
     };
 
-    // 🔑 ВАШ API KEY — ЗАМЕНИТЕ НА СВОЙ!
-    const API_KEY = '123e4567-e89b-12d3-a456-426655440000';
+    
+    const API_KEY = '4e2faac2-923e-48f6-a0ef-b207af91d7e6';
     const url = `https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${API_KEY}`;
 
     try {
