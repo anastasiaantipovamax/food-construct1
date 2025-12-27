@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Construct — Доставка бизнес-ланчей в Москве</title>
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Кастомные стили */
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
         }
 
-        /* Hero-секция */
+        .text-tomato { color: tomato !important; }
+
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1920') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=1920&q=80') 
+                        no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -37,46 +37,66 @@
             font-size: 1.5rem;
             max-width: 700px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
-        /* Преимущества */
+        /* ✅ ЕДИНАЯ ВЫСОТА — КЛЮЧЕВОЙ ФИКС */
+        .feature-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255,99,71,0.2);
+        }
+
+        /* ✅ ИКОНКИ — чёткий размер и центровка */
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 72px;
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #fff;
+            background: rgba(255, 99, 71, 0.1);
             border-radius: 50%;
-            margin: 0 auto 1rem;
-            font-size: 1.8rem;
-            color: tomato;
+            margin: 0 auto 1.25rem;
+            flex-shrink: 0;
         }
 
-        /* CTA */
+        .feature-icon i {
+            font-size: 2rem;
+            color: tomato;
+            line-height: 1;
+        }
+
         .cta-section {
             background-color: #f8f9fa;
             padding: 5rem 0;
         }
 
-        /* Форма */
         .form-control:focus {
             border-color: tomato;
-            box-shadow: 0 0 0 0.25rem rgba(255, 99, 71, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(255,99,71,0.25);
         }
 
         .btn-primary {
             background-color: tomato;
             border-color: tomato;
+            padding: 0.8rem 2rem;
+            font-weight: 500;
         }
-
         .btn-primary:hover {
             background-color: #e74c3c;
             border-color: #e74c3c;
         }
 
-        /* Footer / Контакты */
         footer {
             background-color: #2c3e50;
             color: white;
@@ -87,86 +107,94 @@
             color: #ecf0f1;
             text-decoration: none;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
 
-        /* Адаптивность */
         @media (max-width: 991px) {
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.3rem; }
-        }
-
-        @media (max-width: 767px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Food Construct</h1>
-            <p>Доставка горячих бизнес-ланчей по Москве к назначенному времени — без опозданий и холода.</p>
-            <a href="lunch.html" class="btn btn-primary btn-lg px-5 py-3">Собрать ланч</a>
+            <p>Доставка горячих бизнес-ланчей по Москве к назначенному времени — без опозданий, без холода.</p>
+            <a href="lunch.html" class="btn btn-primary btn-lg">Собрать ланч</a>
         </div>
     </section>
 
-    <!-- Преимущества -->
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold">Почему выбирают нас?</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">⏱️</div>
-                        <h4>Точно в срок</h4>
-                        <p>Доставляем ланч к указанному времени — даже если заказали за 30 минут до нужного момента.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- 1 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-clock"></i></div>
+                            <h4 class="h5">Точно в срок</h4>
+                            <p class="mb-0">Доставим ланч к указанному времени — даже если заказали за 30 минут.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">📦</div>
-                        <h4>Надежная упаковка</h4>
-                        <p>Блюда надёжно упакованы в термоконтейнеры — суп горячий, салат хрустящий.</p>
+                <!-- 2 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-box-seam"></i></div>
+                            <h4 class="h5">Надёжная упаковка</h4>
+                            <p class="mb-0">Термоконтейнеры: суп горячий, салат хрустящий, десерт — как в кафе.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">🕒</div>
-                        <h4>Работаем 16 часов</h4>
-                        <p>Принимаем заказы с 07:00 до 23:00 — подберём ланч на любой рабочий день.</p>
+                <!-- 3 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+                            <h4 class="h5">Работаем 16 часов</h4>
+                            <p class="mb-0">Принимаем заказы с 07:00 до 23:00 — подберём ланч на любой рабочий день.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">🥗</div>
-                        <h4>Свежие ингредиенты</h4>
-                        <p>Готовим ежедневно утром — никакой заморозки и полуфабрикатов.</p>
+                <!-- 4 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-sun"></i></div>
+                            <h4 class="h5">Свежие ингредиенты</h4>
+                            <p class="mb-0">Готовим утром — никакой заморозки и полуфабрикатов.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">💬</div>
-                        <h4>Поддержка 24/7</h4>
-                        <p>Остались вопросы? Пишите — ответим за 5 минут.</p>
+                <!-- 5 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-chat-right-text"></i></div>
+                            <h4 class="h5">Поддержка 24/7</h4>
+                            <p class="mb-0">Остались вопросы? Пишите — ответим за 5 минут в Telegram или WhatsApp.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="text-center">
-                        <div class="feature-icon">💰</div>
-                        <h4>Цены без наценок</h4>
-                        <p>Стоимость ланча — от 150₽. Доставка по Москве — бесплатно при заказе от 300₽.</p>
+                <!-- 6 -->
+                <div class="col">
+                    <div class="feature-card">
+                        <div>
+                            <div class="feature-icon"><i class="bi bi-tag"></i></div>
+                            <h4 class="h5">Цены без наценок</h4>
+                            <p class="mb-0">Стоимость ланча — от 150₽. Доставка по Москве — бесплатно от 300₽.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container text-center">
             <h2 class="fw-bold mb-4">Готовы попробовать?</h2>
@@ -175,14 +203,12 @@
         </div>
     </section>
 
-    <!-- Обратная связь + Контакты -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row g-5">
-                <!-- Форма обратной связи -->
                 <div class="col-lg-6">
                     <h3 class="fw-bold mb-4">Остались вопросы?</h3>
-                    <p class="text-muted">Напишите нам — ответим в течение 10 минут.</p>
+                    <p class="text-muted">Напишите — ответим в течение 10 минут.</p>
                     <form id="feedback-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Имя</label>
@@ -200,22 +226,12 @@
                     </form>
                 </div>
 
-                <!-- Контакты -->
                 <div class="col-lg-6">
                     <h3 class="fw-bold mb-4">Контакты</h3>
                     <ul class="list-unstyled fs-5">
-                        <li class="mb-3">
-                            <i class="bi bi-telephone-fill me-2"></i>
-                            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
-                        </li>
-                        <li class="mb-3">
-                            <i class="bi bi-envelope-fill me-2"></i>
-                            <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a>
-                        </li>
-                        <li class="mb-3">
-                            <i class="bi bi-geo-alt-fill me-2"></i>
-                            <span>Москва, м. Красносельская</span>
-                        </li>
+                        <li class="mb-3"><i class="bi bi-telephone-fill me-2 text-tomato"></i> <a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+                        <li class="mb-3"><i class="bi bi-envelope-fill me-2 text-tomato"></i> <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a></li>
+                        <li class="mb-3"><i class="bi bi-geo-alt-fill me-2 text-tomato"></i> <span>Москва, м. Красносельская</span></li>
                     </ul>
 
                     <h4 class="mt-5 mb-3">Режим работы</h4>
@@ -225,14 +241,11 @@
                     </p>
 
                     <div class="mt-4">
-                        <h5>Мы в соцсетях</h5>
-                        <a href="#" class="btn btn-outline-dark rounded-circle me-2">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="btn btn-outline-dark rounded-circle me-2">
+                        <h5>Мы в мессенджерах</h5>
+                        <a href="https://t.me/foodconstruct" class="btn btn-outline-dark rounded-circle me-2" aria-label="Telegram">
                             <i class="bi bi-telegram"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-dark rounded-circle">
+                        <a href="https://wa.me/74951234567" class="btn btn-outline-dark rounded-circle" aria-label="WhatsApp">
                             <i class="bi bi-whatsapp"></i>
                         </a>
                     </div>
@@ -241,26 +254,22 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container text-center">
             <p>&copy; 2025 Food Construct. Доставка бизнес-ланчей по Москве.</p>
-            <p>
-                <a href="#" class="mx-2">Политика конфиденциальности</a> •
-                <a href="#" class="mx-2">Договор оферты</a> •
-                <a href="#" class="mx-2">Карта сайта</a>
+            <p class="mb-0">
+                <a href="#" class="mx-2 text-white">Политика конфиденциальности</a> •
+                <a href="#" class="mx-2 text-white">Договор оферты</a>
             </p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS (опционально, для интерактивных компонентов) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Простой обработчик формы -->
     <script>
         document.getElementById('feedback-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            const name = document.getElementById('name').value;
+            alert(`Спасибо, ${name}! Ваше сообщение отправлено.`);
             this.reset();
         });
     </script>
