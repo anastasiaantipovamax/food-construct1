@@ -3,7 +3,7 @@
 window.dishes = [];
 
 async function loadDishes() {
-    const apiUrl = 'http://lab7-api.std-900.ist.mospolytech.ru/api/dishes';
+    const apiUrl = 'https://edu.std-900.ist.mospolytech.ru/labs/api/dishes';
 
     try {
         const response = await fetch(apiUrl);
